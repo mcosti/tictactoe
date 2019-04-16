@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var numberOfClicks: Int = 0
     var availableCells: [Int] = [1,2,3,4,5,6,7,8,9]
     var message: String = ""
+    var dataToReceive: String = ""
     
     var phoneColor: UIColor = UIColor(red: 102/255, green: 250/255, blue: 51/255, alpha: 0.5)
     var playerColor: UIColor = UIColor(red: 32/255, green: 192/255, blue: 243/255, alpha: 0.5)
@@ -31,11 +32,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var b8: UIButton!
     @IBOutlet weak var b9: UIButton!
     
+    @IBOutlet weak var highScoreLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     let winningPossibilities: [[Int]] = [[1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonsArray = [b1, b2, b3, b4, b5, b6, b7, b8, b9]
+        nameLabel.text = dataToReceive
     }
     
     @IBAction func pressButton(_ sender: Any) {
